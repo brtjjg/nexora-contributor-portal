@@ -44,13 +44,12 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:1.8rem;margin-bottom:0.5rem;position:relative;z-index:1}
 .hero p{opacity:0.85;font-size:0.95rem;position:relative;z-index:1}
 
-.auth-wrap{max-width:440px;margin:4rem auto;padding:0 1.5rem}
+.auth-wrap{max-width:480px;margin:3rem auto;padding:0 1.5rem}
 .auth-card{background:var(--white);padding:2.5rem;border-radius:var(--radius);box-shadow:var(--shadow)}
-.auth-logo{text-align:center;margin-bottom:2rem}
+.auth-logo{text-align:center;margin-bottom:1.5rem}
 .auth-logo .title{font-size:2.2rem;font-weight:800;color:var(--blue);letter-spacing:2px}
 .auth-logo .sub{font-size:0.8rem;color:var(--gold);letter-spacing:4px;font-weight:700;margin-top:4px}
 .auth-logo .tag{font-size:0.7rem;color:var(--text-secondary);letter-spacing:2px;margin-top:6px}
-.auth-card h2{text-align:center;color:var(--navy);margin-bottom:1.5rem;font-size:1.3rem;display:flex;align-items:center;justify-content:center;gap:10px}
 
 .form-group{margin-bottom:1.25rem}
 .form-group label{display:block;font-weight:600;margin-bottom:0.4rem;color:var(--navy);font-size:0.9rem}
@@ -136,12 +135,12 @@ a{text-decoration:none;color:inherit}
   .hero h1{font-size:1.4rem}
   .container{padding:1.5rem 1rem}
   .modal-box{padding:1.5rem}
+  .auth-card{padding:1.5rem}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════ NAV ═══════ -->
 <nav class="top-nav">
   <div class="inner">
     <div class="brand" onclick="goPage('dashboard')">
@@ -158,7 +157,7 @@ a{text-decoration:none;color:inherit}
   </div>
 </nav>
 
-<!-- ═══════ LOGIN ═══════ -->
+<!-- ═══════ LOGIN / SIGNUP ═══════ -->
 <div class="page active" id="page-login">
   <div class="auth-wrap">
     <div class="auth-card">
@@ -167,9 +166,16 @@ a{text-decoration:none;color:inherit}
         <div class="sub">CONTRIBUTOR PORTAL</div>
         <div class="tag">CREATE · SUBMIT · PUBLISH</div>
       </div>
-      <h2><i class="fas fa-sign-in-alt"></i> Sign In</h2>
+
+      <div class="tabs" style="justify-content:center;margin-bottom:1.5rem">
+        <button class="tab active" id="tabLogin" onclick="switchAuthTab('login')"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+        <button class="tab" id="tabSignup" onclick="switchAuthTab('signup')"><i class="fas fa-user-plus"></i> Create Account</button>
+      </div>
+
       <div id="loginFlash"></div>
-      <form onsubmit="loginUser(event)">
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" onsubmit="loginUser(event)">
         <div class="form-group">
           <label>Email</label>
           <input type="email" id="loginEmail" required autocomplete="email">
@@ -182,9 +188,54 @@ a{text-decoration:none;color:inherit}
           <i class="fas fa-sign-in-alt"></i> Sign In
         </button>
       </form>
+
+      <!-- SIGNUP FORM -->
+      <form id="signupForm" class="hidden" onsubmit="signupContributor(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span style="color:var(--danger)">*</span></label>
+            <input type="text" id="suFullName" required placeholder="e.g. Jane Wanjiku">
+          </div>
+          <div class="form-group">
+            <label>Username <span style="color:var(--danger)">*</span></label>
+            <input type="text" id="suUsername" required placeholder="e.g. janew" pattern="[a-z0-9_]{3,20}" title="3-20 characters: lowercase letters, numbers, underscore">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email <span style="color:var(--danger)">*</span></label>
+          <input type="email" id="suEmail" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="suPhone" placeholder="+254 7XX XXX XXX">
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" id="suCountry" placeholder="e.g. Kenya">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password <span style="color:var(--danger)">*</span></label>
+          <input type="password" id="suPassword" required minlength="8" placeholder="Min 8 chars, 1 uppercase, 1 number" autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label>Confirm Password <span style="color:var(--danger)">*</span></label>
+          <input type="password" id="suPasswordConfirm" required placeholder="Re-enter password" autocomplete="new-password">
+        </div>
+        <div class="form-group" style="display:flex;gap:0.5rem;align-items:flex-start">
+          <input type="checkbox" id="suTerms" required style="margin-top:5px;width:18px;height:18px;accent-color:var(--blue)">
+          <label for="suTerms" style="font-weight:400;font-size:0.85rem;color:var(--text-secondary);cursor:pointer">
+            I agree to submit original, high-quality content. All courses are subject to admin review before publication.
+          </label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" id="signupBtn">
+          <i class="fas fa-user-plus"></i> Create Account
+        </button>
+      </form>
+
       <p style="text-align:center;font-size:0.85rem;color:var(--text-secondary);margin-top:1.5rem">
-        Contributor access is by invitation only.<br>
-        Contact <a href="mailto:nexo27716@gmail.com" style="color:var(--blue)">nexo27716@gmail.com</a> for access.
+        <i class="fas fa-info-circle"></i> New accounts are reviewed by an admin before activation.
       </p>
     </div>
   </div>
@@ -197,14 +248,11 @@ a{text-decoration:none;color:inherit}
       <h1><i class="fas fa-chart-pie"></i> Welcome back, <span id="heroName">Contributor</span>!</h1>
       <p>Here's your course creation activity at a glance.</p>
     </div>
-
     <div class="stats-grid" id="dashStats"></div>
-
     <div class="card">
       <h3><i class="fas fa-clock"></i> Recent Activity</h3>
       <div id="recentActivity"></div>
     </div>
-
     <div class="section-head">
       <h2><i class="fas fa-plus-circle"></i> Quick Actions</h2>
     </div>
@@ -248,26 +296,18 @@ a{text-decoration:none;color:inherit}
   </div>
 </div>
 
-<!-- ═══════ COURSE EDITOR MODAL ═══════ -->
+<!-- ═══════ EDITOR MODAL ═══════ -->
 <div class="modal-backdrop" id="editorModal">
   <div class="modal-box">
     <h2><i class="fas fa-edit"></i> <span id="editorTitle">New Course Draft</span></h2>
     <div id="editorFlash"></div>
 
     <div class="form-row">
-      <div class="form-group">
-        <label>Course Title <span style="color:var(--danger)">*</span></label>
-        <input type="text" id="edTitle" placeholder="e.g. Introduction to Computer Packages">
-      </div>
-      <div class="form-group">
-        <label>Course Code</label>
-        <input type="text" id="edCode" placeholder="e.g. NXA-CP-101">
-      </div>
+      <div class="form-group"><label>Course Title <span style="color:var(--danger)">*</span></label><input type="text" id="edTitle" placeholder="e.g. Introduction to Computer Packages"></div>
+      <div class="form-group"><label>Course Code</label><input type="text" id="edCode" placeholder="e.g. NXA-CP-101"></div>
     </div>
-
     <div class="form-row">
-      <div class="form-group">
-        <label>Category</label>
+      <div class="form-group"><label>Category</label>
         <select id="edCategory">
           <option value="">Select...</option>
           <option>IT & Technology</option>
@@ -280,8 +320,7 @@ a{text-decoration:none;color:inherit}
           <option>Other</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Level</label>
+      <div class="form-group"><label>Level</label>
         <select id="edLevel">
           <option value="">Select...</option>
           <option>Beginner</option>
@@ -291,27 +330,12 @@ a{text-decoration:none;color:inherit}
         </select>
       </div>
     </div>
-
-    <div class="form-group">
-      <label>Description</label>
-      <textarea id="edDescription" rows="3" placeholder="What will students learn?"></textarea>
-    </div>
-
+    <div class="form-group"><label>Description</label><textarea id="edDescription" rows="3" placeholder="What will students learn?"></textarea></div>
     <div class="form-row">
-      <div class="form-group">
-        <label>Duration</label>
-        <input type="text" id="edDuration" placeholder="e.g. 6 Weeks">
-      </div>
-      <div class="form-group">
-        <label>Suggested Price ($)</label>
-        <input type="number" id="edPrice" step="0.01" min="0" value="0">
-      </div>
+      <div class="form-group"><label>Duration</label><input type="text" id="edDuration" placeholder="e.g. 6 Weeks"></div>
+      <div class="form-group"><label>Suggested Price ($)</label><input type="number" id="edPrice" step="0.01" min="0" value="0"></div>
     </div>
-
-    <div class="form-group">
-      <label>Cover Image URL (optional)</label>
-      <input type="text" id="edCover" placeholder="https://...">
-    </div>
+    <div class="form-group"><label>Cover Image URL (optional)</label><input type="text" id="edCover" placeholder="https://..."></div>
 
     <h3 style="color:var(--navy);margin:1.5rem 0 1rem;font-size:1rem"><i class="fas fa-layer-group" style="color:var(--gold)"></i> Modules & Lessons</h3>
     <div id="edModules"></div>
@@ -325,7 +349,7 @@ a{text-decoration:none;color:inherit}
   </div>
 </div>
 
-<!-- ═══════ SUBMISSION VIEW MODAL ═══════ -->
+<!-- ═══════ VIEW MODAL ═══════ -->
 <div class="modal-backdrop" id="viewModal">
   <div class="modal-box">
     <h2><i class="fas fa-file-alt"></i> Submission Details</h2>
@@ -339,7 +363,6 @@ a{text-decoration:none;color:inherit}
 <script>
 const API_BASE = 'https://nexora-api-sskg.onrender.com/api';
 
-// ─── API HELPERS ───
 async function api(path, options = {}) {
   const opts = {
     credentials: 'include',
@@ -360,12 +383,10 @@ async function api(path, options = {}) {
   return data;
 }
 
-// ─── STATE ───
 let currentUser = null;
 let currentSubmissions = [];
 let editorState = { id: null, modules: [] };
 
-// ─── UTILITIES ───
 function esc(s) {
   return (s == null ? '' : String(s))
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -377,52 +398,61 @@ function showFlash(id, msg, type = 'info') {
   const el = document.getElementById(id);
   if (!el) return;
   el.innerHTML = `<div class="flash flash-${type}">${msg}</div>`;
-  setTimeout(() => { el.innerHTML = ''; }, 6000);
+  setTimeout(() => { el.innerHTML = ''; }, 8000);
 }
 function statusLabel(s) {
   const map = {
-    draft: 'Draft',
-    pending_review: 'Pending Review',
-    changes_requested: 'Changes Requested',
-    approved: 'Approved',
-    published: 'Published',
-    rejected: 'Rejected',
+    draft: 'Draft', pending_review: 'Pending Review', changes_requested: 'Changes Requested',
+    approved: 'Approved', published: 'Published', rejected: 'Rejected',
   };
   return map[s] || s;
 }
-function statusBadge(s) {
-  return `<span class="badge badge-${s}">${statusLabel(s)}</span>`;
-}
+function statusBadge(s) { return `<span class="badge badge-${s}">${statusLabel(s)}</span>`; }
 
-// ─── ROUTING ───
 function goPage(name) {
   if (!currentUser && name !== 'login') name = 'login';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('page-' + name);
   if (el) el.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
   if (name === 'dashboard') loadDashboard();
   if (name === 'submissions') loadSubmissions();
   if (name === 'manuals') loadManuals();
   if (name === 'profile') loadProfile();
 }
 
-// ─── BOOT ───
+function switchAuthTab(tab) {
+  const loginTab = document.getElementById('tabLogin');
+  const signupTab = document.getElementById('tabSignup');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  if (tab === 'login') {
+    loginTab.classList.add('active'); signupTab.classList.remove('active');
+    loginForm.classList.remove('hidden'); signupForm.classList.add('hidden');
+  } else {
+    signupTab.classList.add('active'); loginTab.classList.remove('active');
+    signupForm.classList.remove('hidden'); loginForm.classList.add('hidden');
+  }
+  document.getElementById('loginFlash').innerHTML = '';
+}
+
 async function boot() {
   try {
     const { user } = await api('/auth/me');
-    if (user && (user.role === 'contributor' || user.role === 'admin')) {
+    if (user && user.role === 'contributor' && user.status === 'active') {
       currentUser = user;
       showApp();
       return;
+    } else if (user && user.role === 'admin') {
+      currentUser = user;
+      showApp();
+      return;
+    } else if (user && user.role === 'contributor' && user.status === 'pending') {
+      showFlash('loginFlash', '⏳ Your account is pending admin approval. Please check back later.', 'warning');
     } else if (user) {
-      // Logged in but not a contributor
-      showFlash('loginFlash', '❌ This portal is for contributors only. Ask admin for access.', 'danger');
+      showFlash('loginFlash', '❌ This portal is for contributors. If you\'re a student, log in at <a href="https://nexora-e-academy.vercel.app" style="color:var(--blue);font-weight:600">nexora-e-academy.vercel.app</a>', 'danger');
     }
-  } catch (e) {
-    // Not logged in
-  }
+  } catch (e) {}
   goPage('login');
 }
 
@@ -433,7 +463,6 @@ function showApp() {
   goPage('dashboard');
 }
 
-// ─── LOGIN / LOGOUT ───
 async function loginUser(e) {
   e.preventDefault();
   const btn = document.getElementById('loginBtn');
@@ -452,6 +481,10 @@ async function loginUser(e) {
       await api('/auth/logout', { method: 'POST' });
       throw new Error('Access denied. This portal is for contributors only.');
     }
+    if (user.role === 'contributor' && user.status !== 'active') {
+      await api('/auth/logout', { method: 'POST' });
+      throw new Error('Your contributor account is pending admin approval.');
+    }
     currentUser = user;
     showApp();
   } catch (err) {
@@ -462,14 +495,58 @@ async function loginUser(e) {
   }
 }
 
+async function signupContributor(e) {
+  e.preventDefault();
+  const btn = document.getElementById('signupBtn');
+
+  const pw = document.getElementById('suPassword').value;
+  const pwc = document.getElementById('suPasswordConfirm').value;
+
+  if (pw !== pwc) { showFlash('loginFlash', '❌ Passwords do not match', 'danger'); return; }
+  if (pw.length < 8 || !/[A-Z]/.test(pw) || !/\d/.test(pw)) {
+    showFlash('loginFlash', '❌ Password needs 8+ chars, 1 uppercase, 1 number', 'danger');
+    return;
+  }
+  if (!document.getElementById('suTerms').checked) {
+    showFlash('loginFlash', '❌ Please accept the terms', 'danger');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating...';
+
+  try {
+    await api('/contributor/signup', {
+      method: 'POST',
+      body: {
+        email: document.getElementById('suEmail').value.trim(),
+        password: pw,
+        full_name: document.getElementById('suFullName').value.trim(),
+        username: document.getElementById('suUsername').value.trim().toLowerCase(),
+        phone: document.getElementById('suPhone').value.trim(),
+        country: document.getElementById('suCountry').value.trim(),
+      },
+    });
+
+    showFlash('loginFlash', '✅ Account created! An admin will review your application. You\'ll be able to log in once approved.', 'success');
+    document.getElementById('signupForm').reset();
+    setTimeout(() => { switchAuthTab('login'); }, 4000);
+  } catch (err) {
+    showFlash('loginFlash', '❌ ' + (err.data?.error || err.message), 'danger');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
+  }
+}
+
 async function logout() {
   try { await api('/auth/logout', { method: 'POST' }); } catch (e) {}
   currentUser = null;
   document.getElementById('navRight').classList.add('hidden');
   goPage('login');
+  switchAuthTab('login');
 }
 
-// ─── DASHBOARD ───
 async function loadDashboard() {
   const statsEl = document.getElementById('dashStats');
   const recentEl = document.getElementById('recentActivity');
@@ -480,12 +557,11 @@ async function loadDashboard() {
     statsEl.innerHTML = `
       <div class="stat-card gold"><div class="num">${s.drafts || 0}</div><div class="lbl">Drafts</div></div>
       <div class="stat-card"><div class="num">${s.pending || 0}</div><div class="lbl">Pending Review</div></div>
-      <div class="stat-card grey"><div class="num">${s.changes_requested || 0}</div><div class="lbl">Changes Requested</div></div>
+      <div class="stat-card grey"><div class="num">${s.changes_requested || 0}</div><div class="lbl">Changes Req.</div></div>
       <div class="stat-card green"><div class="num">${s.approved || 0}</div><div class="lbl">Approved</div></div>
       <div class="stat-card green"><div class="num">${s.published || 0}</div><div class="lbl">Published</div></div>
       <div class="stat-card red"><div class="num">${s.rejected || 0}</div><div class="lbl">Rejected</div></div>
     `;
-
     if (!data.recent || !data.recent.length) {
       recentEl.innerHTML = '<div class="empty-state" style="padding:2rem;border:none"><i class="fas fa-inbox"></i><h3>No activity yet</h3><p>Create your first course draft to get started.</p></div>';
     } else {
@@ -506,7 +582,6 @@ async function loadDashboard() {
   }
 }
 
-// ─── SUBMISSIONS ───
 async function loadSubmissions() {
   const el = document.getElementById('submissionsList');
   el.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><h3>Loading...</h3></div>';
@@ -544,7 +619,6 @@ async function loadSubmissions() {
   }
 }
 
-// ─── MANUALS ───
 async function loadManuals() {
   const el = document.getElementById('manualsList');
   el.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><h3>Loading...</h3></div>';
@@ -567,7 +641,6 @@ async function loadManuals() {
   }
 }
 
-// ─── PROFILE ───
 async function loadProfile() {
   const el = document.getElementById('profileContent');
   el.innerHTML = '<div class="empty-state" style="padding:2rem"><i class="fas fa-spinner fa-spin"></i></div>';
@@ -598,11 +671,9 @@ async function loadProfile() {
   }
 }
 
-// ─── EDITOR ───
 function openEditor(submission) {
   editorState.id = submission ? submission.id : null;
   editorState.modules = submission && submission.modules ? JSON.parse(JSON.stringify(submission.modules)) : [];
-
   document.getElementById('editorTitle').textContent = submission ? 'Edit Course Draft' : 'New Course Draft';
   document.getElementById('edTitle').value = submission?.title || '';
   document.getElementById('edCode').value = submission?.code || '';
@@ -612,13 +683,10 @@ function openEditor(submission) {
   document.getElementById('edDuration').value = submission?.duration || '';
   document.getElementById('edPrice').value = submission?.price || 0;
   document.getElementById('edCover').value = submission?.cover_image_url || '';
-
   renderModules();
   document.getElementById('editorModal').classList.add('active');
 }
-function closeEditor() {
-  document.getElementById('editorModal').classList.remove('active');
-}
+function closeEditor() { document.getElementById('editorModal').classList.remove('active'); }
 
 function renderModules() {
   const el = document.getElementById('edModules');
@@ -639,33 +707,18 @@ function renderModules() {
         <label>Module Title</label>
         <input type="text" value="${esc(m.title || '')}" oninput="editorState.modules[${mi}].title = this.value" placeholder="e.g. Getting Started">
       </div>
-      <div id="lessons-${mi}">
+      <div>
         ${(m.lessons || []).map((l, li) => `
           <div class="lesson-box">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
               <strong style="color:var(--navy);font-size:0.9rem">Lesson ${mi + 1}.${li + 1}</strong>
               <button type="button" class="btn btn-danger btn-sm" onclick="removeLesson(${mi},${li})"><i class="fas fa-times"></i></button>
             </div>
-            <div class="form-group">
-              <label>Title</label>
-              <input type="text" value="${esc(l.title || '')}" oninput="editorState.modules[${mi}].lessons[${li}].title = this.value">
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <input type="text" value="${esc(l.description || '')}" oninput="editorState.modules[${mi}].lessons[${li}].description = this.value">
-            </div>
-            <div class="form-group">
-              <label>Video URL (MP4 or embed)</label>
-              <input type="text" value="${esc(l.video_url || '')}" oninput="editorState.modules[${mi}].lessons[${li}].video_url = this.value" placeholder="https://...">
-            </div>
-            <div class="form-group">
-              <label>Notes / Content</label>
-              <textarea rows="3" oninput="editorState.modules[${mi}].lessons[${li}].notes = this.value">${esc(l.notes || '')}</textarea>
-            </div>
-            <div class="form-group">
-              <label>Assignment (optional)</label>
-              <textarea rows="2" oninput="editorState.modules[${mi}].lessons[${li}].assignment = this.value">${esc(l.assignment || '')}</textarea>
-            </div>
+            <div class="form-group"><label>Title</label><input type="text" value="${esc(l.title || '')}" oninput="editorState.modules[${mi}].lessons[${li}].title = this.value"></div>
+            <div class="form-group"><label>Description</label><input type="text" value="${esc(l.description || '')}" oninput="editorState.modules[${mi}].lessons[${li}].description = this.value"></div>
+            <div class="form-group"><label>Video URL (MP4 or embed)</label><input type="text" value="${esc(l.video_url || '')}" oninput="editorState.modules[${mi}].lessons[${li}].video_url = this.value" placeholder="https://..."></div>
+            <div class="form-group"><label>Notes / Content</label><textarea rows="3" oninput="editorState.modules[${mi}].lessons[${li}].notes = this.value">${esc(l.notes || '')}</textarea></div>
+            <div class="form-group"><label>Assignment (optional)</label><textarea rows="2" oninput="editorState.modules[${mi}].lessons[${li}].assignment = this.value">${esc(l.assignment || '')}</textarea></div>
           </div>
         `).join('')}
       </div>
@@ -713,7 +766,7 @@ async function saveDraft() {
 async function saveAndSubmit() {
   const payload = collectEditorData();
   if (!payload.title) { showFlash('editorFlash', '❌ Title is required', 'danger'); return; }
-  if (!confirm('Submit this course for admin review?\n\nYou won\'t be able to edit it until the admin responds.')) return;
+  if (!confirm('Submit this course for admin review?\n\nYou won\'t be able to edit until the admin responds.')) return;
   try {
     let id = editorState.id;
     if (id) {
@@ -744,13 +797,11 @@ function collectEditorData() {
   };
 }
 
-// ─── VIEW SUBMISSION ───
 async function viewSubmission(id) {
   try {
     const { submission } = await api('/contributor/submissions/' + id);
     const s = submission;
     const canEdit = s.status === 'draft' || s.status === 'changes_requested';
-
     const modulesHtml = (Array.isArray(s.modules) ? s.modules : []).map((m, mi) => `
       <div class="module-box">
         <h4 style="color:var(--navy);margin-bottom:0.5rem">Module ${mi + 1}: ${esc(m.title || '(untitled)')}</h4>
@@ -786,11 +837,8 @@ async function viewSubmission(id) {
     alert('❌ ' + (err.data?.error || err.message));
   }
 }
-function closeView() {
-  document.getElementById('viewModal').classList.remove('active');
-}
+function closeView() { document.getElementById('viewModal').classList.remove('active'); }
 
-// ─── BOOT ───
 boot();
 </script>
 </body>
