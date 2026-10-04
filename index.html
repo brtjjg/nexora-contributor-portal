@@ -21,7 +21,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 a{text-decoration:none;color:inherit}
 .hidden{display:none!important}
 
-/* ─── TOP NAV ─── */
+/* TOP NAV */
 .top-nav{background:var(--navy);padding:12px 20px;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.15)}
 .top-nav .inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;cursor:pointer}
@@ -37,7 +37,7 @@ a{text-decoration:none;color:inherit}
 .btn-logout{padding:8px 16px;border-radius:50px;font-weight:600;font-size:0.83rem;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;background:transparent;border:2px solid var(--danger);color:var(--danger)}
 .btn-logout:hover{background:var(--danger);color:#fff}
 
-/* ─── LAYOUT ─── */
+/* LAYOUT */
 .layout{display:flex;min-height:calc(100vh - 68px)}
 .sidebar{width:var(--sidebar-w);background:var(--navy);color:rgba(255,255,255,0.85);padding:1.25rem 0;overflow-y:auto;flex-shrink:0;position:sticky;top:68px;height:calc(100vh - 68px)}
 .sidebar .sect{font-size:0.6rem;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;padding:1rem 1.25rem 0.4rem;font-weight:700}
@@ -45,7 +45,6 @@ a{text-decoration:none;color:inherit}
 .sidebar .item:hover{background:rgba(255,255,255,0.05);color:#fff}
 .sidebar .item.active{background:rgba(41,169,232,0.15);color:var(--blue);border-left-color:var(--blue)}
 .sidebar .item i{width:18px;text-align:center;font-size:0.9rem}
-.sidebar .item.locked{opacity:0.4;cursor:not-allowed}
 .sidebar .item .step-num{width:20px;height:20px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:700;flex-shrink:0}
 .sidebar .item.done .step-num{background:var(--success);border-color:var(--success);color:#fff}
 .sidebar .item.current .step-num{background:var(--blue);border-color:var(--blue);color:#fff}
@@ -55,7 +54,7 @@ a{text-decoration:none;color:inherit}
 .sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:90}
 .sidebar-backdrop.active{display:block}
 
-/* ─── PAGES ─── */
+/* PAGES */
 .page{display:none}
 .page.active{display:block}
 
@@ -95,20 +94,19 @@ a{text-decoration:none;color:inherit}
 .flash-danger{background:#fee2e2;color:#991b1b;border-left:4px solid var(--danger)}
 .flash-warning{background:#fef3c7;color:#92400e;border-left:4px solid var(--warning)}
 
-/* ─── AUTH ─── */
+/* AUTH */
 .auth-wrap{max-width:480px;margin:2rem auto;padding:0 1.25rem}
 .auth-card{background:var(--white);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow)}
 .auth-logo{text-align:center;margin-bottom:1.25rem}
 .auth-logo .title{font-size:2rem;font-weight:800;color:var(--blue);letter-spacing:2px}
 .auth-logo .sub{font-size:0.75rem;color:var(--gold);letter-spacing:4px;font-weight:700;margin-top:3px}
 .auth-logo .tag{font-size:0.65rem;color:var(--text-secondary);letter-spacing:2px;margin-top:5px}
-
 .tabs{display:flex;gap:0.4rem;border-bottom:2px solid #e2e8f0;margin-bottom:1.25rem}
 .tab{padding:0.75rem 1.1rem;font-weight:600;color:var(--text-secondary);cursor:pointer;border-bottom:3px solid transparent;font-size:0.85rem;font-family:inherit;background:none;border-top:none;border-left:none;border-right:none}
 .tab:hover{color:var(--navy)}
 .tab.active{color:var(--blue);border-bottom-color:var(--blue)}
 
-/* ─── DASHBOARD ─── */
+/* DASHBOARD */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;margin-bottom:1.75rem}
 .stat-card{background:var(--white);padding:1.1rem;border-radius:14px;box-shadow:var(--shadow);text-align:center;border-top:3px solid var(--blue)}
 .stat-card .num{font-size:1.7rem;font-weight:800;color:var(--navy)}
@@ -135,13 +133,16 @@ a{text-decoration:none;color:inherit}
 .badge-approved{background:#dbeafe;color:#1e40af}
 .badge-published{background:#dcfce7;color:#166534}
 .badge-rejected{background:#fee2e2;color:#991b1b}
+.badge-incomplete{background:#f1f5f9;color:#64748b}
+.badge-ready{background:#dcfce7;color:#166534}
+.badge-partial{background:#fef3c7;color:#92400e}
 
 .empty-state{text-align:center;padding:2.5rem 1.5rem;color:var(--text-secondary);background:var(--white);border-radius:14px;border:2px dashed #e2e8f0}
 .empty-state i{font-size:2.5rem;color:#cbd5e1;margin-bottom:0.8rem;display:block}
 .empty-state h3{color:var(--navy);margin-bottom:0.4rem;font-size:1rem}
 .empty-state p{font-size:0.85rem;margin-bottom:1.25rem}
 
-/* ─── WIZARD ─── */
+/* WIZARD */
 .wizard-header{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem 1.5rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .wizard-header .left{display:flex;align-items:center;gap:1rem}
 .wizard-header .left h2{color:var(--navy);font-size:1.15rem;margin:0}
@@ -162,18 +163,57 @@ a{text-decoration:none;color:inherit}
 .step-actions{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid #e2e8f0;flex-wrap:wrap}
 .step-actions .right{display:flex;gap:0.5rem;flex-wrap:wrap}
 
-/* Modules */
+/* Modules + Lessons in Step 2 */
 .module-box{background:var(--white);border-radius:12px;box-shadow:var(--shadow);padding:1.1rem;margin-bottom:1rem;border-left:4px solid var(--blue)}
 .module-head{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-bottom:0.85rem;flex-wrap:wrap}
 .module-head h4{color:var(--navy);font-size:0.95rem}
 .lesson-box{background:var(--bg);border-radius:10px;padding:0.9rem;margin-bottom:0.6rem;border-left:3px solid var(--gold)}
 
+/* Lesson list in Step 3 */
+.lesson-list-item{background:var(--white);border-radius:12px;box-shadow:var(--shadow);padding:1rem 1.15rem;margin-bottom:0.65rem;display:flex;justify-content:space-between;align-items:center;gap:0.75rem;flex-wrap:wrap;border-left:4px solid var(--blue)}
+.lesson-list-item .info{flex:1;min-width:200px}
+.lesson-list-item .info h4{color:var(--navy);font-size:0.95rem;margin-bottom:0.2rem}
+.lesson-list-item .info .meta{font-size:0.75rem;color:var(--text-secondary)}
+.lesson-list-item .actions{display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap}
+
+/* LESSON EDITOR */
+.lesson-editor-header{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem 1.5rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.lesson-editor-header h2{color:var(--navy);font-size:1.2rem;margin:0}
+.lesson-editor-header .sub{font-size:0.8rem;color:var(--text-secondary);margin-top:0.2rem}
+.lesson-tabs{display:flex;gap:0.25rem;background:var(--white);border-radius:12px;padding:0.4rem;margin-bottom:1.25rem;overflow-x:auto;box-shadow:var(--shadow)}
+.lesson-tab{padding:0.7rem 1.1rem;font-weight:600;color:var(--text-secondary);cursor:pointer;font-size:0.83rem;border-radius:8px;white-space:nowrap;font-family:inherit;background:none;border:none;display:flex;align-items:center;gap:6px}
+.lesson-tab:hover{color:var(--navy);background:var(--bg)}
+.lesson-tab.active{background:var(--blue);color:#fff}
+.lesson-tab.done::after{content:'✓';color:var(--success);font-weight:700}
+.lesson-tab.active.done::after{color:#fff}
+.lesson-pane{display:none}
+.lesson-pane.active{display:block}
+.lesson-pane h3{color:var(--navy);font-size:1rem;margin-bottom:0.5rem}
+.lesson-pane .pane-hint{font-size:0.82rem;color:var(--text-secondary);margin-bottom:1rem}
+
+/* Objectives / Lists */
+.dynamic-list{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:0.75rem}
+.dynamic-row{display:flex;gap:0.5rem;align-items:center}
+.dynamic-row input{flex:1;padding:9px 12px;border:2px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:0.9rem}
+.dynamic-row button{width:34px;height:34px;border-radius:8px;background:#fee2e2;color:#991b1b;border:none;cursor:pointer;font-size:0.85rem;flex-shrink:0}
+
+/* Term rows */
+.term-row{display:grid;grid-template-columns:1fr 2fr auto;gap:0.5rem;align-items:start;margin-bottom:0.5rem}
+.term-row input,.term-row textarea{padding:9px 12px;border:2px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:0.88rem;width:100%}
+.term-row button{width:36px;height:36px;border-radius:8px;background:#fee2e2;color:#991b1b;border:none;cursor:pointer;flex-shrink:0}
+
+/* Checklist */
+.checklist{background:var(--bg);border-radius:12px;padding:1rem;margin-top:1rem}
+.checklist h4{color:var(--navy);font-size:0.9rem;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center}
+.checklist .check{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;padding:0.2rem 0;color:var(--text-secondary)}
+.checklist .check.ok{color:var(--success);font-weight:600}
+.progress-mini{height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:0.75rem}
+.progress-mini .fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--success));transition:width 0.3s}
+
 /* Preview */
 .preview-hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff;padding:2rem;border-radius:14px;margin-bottom:1.5rem}
 .preview-hero h1{font-size:1.6rem;margin-bottom:0.5rem}
 .preview-hero .meta{display:flex;gap:1rem;font-size:0.85rem;opacity:0.85;flex-wrap:wrap}
-.preview-hero .meta span{display:inline-flex;align-items:center;gap:5px}
-
 .completeness{padding:1.25rem;border-radius:12px;margin-bottom:1.5rem}
 .completeness.ok{background:#dcfce7;border:2px solid #86efac}
 .completeness.warn{background:#fef3c7;border:2px solid #fde68a}
@@ -197,6 +237,7 @@ a{text-decoration:none;color:inherit}
   .nav-toggle{display:inline-flex}
   .form-row,.form-row-3{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .term-row{grid-template-columns:1fr}
 }
 @media(max-width:520px){
   .content{padding:1rem 0.75rem}
@@ -209,7 +250,6 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
-<!-- ═══════ TOP NAV ═══════ -->
 <nav class="top-nav">
   <div class="inner">
     <div class="brand" onclick="goPage('dashboard')">
@@ -236,14 +276,11 @@ a{text-decoration:none;color:inherit}
         <div class="sub">CONTRIBUTOR PORTAL</div>
         <div class="tag">CREATE · SUBMIT · PUBLISH</div>
       </div>
-
       <div class="tabs" style="justify-content:center">
         <button class="tab active" id="tabLogin" onclick="switchAuthTab('login')"><i class="fas fa-sign-in-alt"></i> Sign In</button>
         <button class="tab" id="tabSignup" onclick="switchAuthTab('signup')"><i class="fas fa-user-plus"></i> Create Account</button>
       </div>
-
       <div id="loginFlash"></div>
-
       <form id="loginForm" onsubmit="loginUser(event)">
         <div style="margin:0 0 1rem">
           <div id="googleLoginBtn" style="display:flex;justify-content:center"></div>
@@ -253,17 +290,10 @@ a{text-decoration:none;color:inherit}
             <div style="flex:1;height:1px;background:#e2e8f0"></div>
           </div>
         </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="loginEmail" required autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" id="loginPassword" required autocomplete="current-password">
-        </div>
+        <div class="form-group"><label>Email</label><input type="email" id="loginEmail" required autocomplete="email"></div>
+        <div class="form-group"><label>Password</label><input type="password" id="loginPassword" required autocomplete="current-password"></div>
         <button type="submit" class="btn btn-primary btn-block" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Sign In</button>
       </form>
-
       <form id="signupForm" class="hidden" onsubmit="signupContributor(event)">
         <div style="margin:0 0 1rem">
           <div id="googleSignupBtn" style="display:flex;justify-content:center"></div>
@@ -275,7 +305,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="form-row">
           <div class="form-group"><label>Full Name *</label><input type="text" id="suFullName" required></div>
-          <div class="form-group"><label>Username *</label><input type="text" id="suUsername" required pattern="[a-z0-9_]{3,20}" title="3-20 chars: lowercase, numbers, underscore"></div>
+          <div class="form-group"><label>Username *</label><input type="text" id="suUsername" required pattern="[a-z0-9_]{3,20}" title="3-20 chars"></div>
         </div>
         <div class="form-group"><label>Email *</label><input type="email" id="suEmail" required autocomplete="email"></div>
         <div class="form-row">
@@ -290,7 +320,6 @@ a{text-decoration:none;color:inherit}
         </div>
         <button type="submit" class="btn btn-success btn-block" id="signupBtn"><i class="fas fa-user-plus"></i> Create Account</button>
       </form>
-
       <p style="text-align:center;font-size:0.82rem;color:var(--text-secondary);margin-top:1.25rem">
         <i class="fas fa-info-circle"></i> New accounts are reviewed by an admin before activation.
       </p>
@@ -298,15 +327,13 @@ a{text-decoration:none;color:inherit}
   </div>
 </div>
 
-<!-- ═══════ MAIN LAYOUT (sidebar + content) ═══════ -->
+<!-- ═══════ MAIN LAYOUT ═══════ -->
 <div class="layout hidden" id="mainLayout">
   <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
-
   <aside class="sidebar" id="sidebar">
     <div class="sect">Workspace</div>
     <div class="item" data-page="dashboard" onclick="goPage('dashboard')"><i class="fas fa-chart-pie"></i> Dashboard</div>
     <div class="item" data-page="submissions" onclick="goPage('submissions')"><i class="fas fa-folder-open"></i> My Courses</div>
-
     <div class="sect">Create Course</div>
     <div id="wizardSidebar" class="hidden">
       <div class="item" data-step="1" onclick="goToStep(1)"><span class="step-num">1</span> Basic Information</div>
@@ -316,7 +343,6 @@ a{text-decoration:none;color:inherit}
       <div class="item" data-step="5" onclick="goToStep(5)"><span class="step-num">5</span> Preview & Submit</div>
       <div class="item" onclick="cancelWizard()" style="color:#fca5a5;margin-top:0.5rem"><i class="fas fa-times"></i> Exit Wizard</div>
     </div>
-
     <div class="sect">Resources</div>
     <div class="item" data-page="manuals" onclick="goPage('manuals')"><i class="fas fa-book"></i> Course Manuals</div>
     <div class="item" data-page="profile" onclick="goPage('profile')"><i class="fas fa-user"></i> Profile</div>
@@ -324,7 +350,7 @@ a{text-decoration:none;color:inherit}
 
   <main class="content">
 
-    <!-- ═══════ DASHBOARD ═══════ -->
+    <!-- DASHBOARD -->
     <div class="page" id="page-dashboard">
       <div class="hero">
         <h1><i class="fas fa-chart-pie"></i> Welcome back, <span id="heroName">Contributor</span>!</h1>
@@ -335,9 +361,7 @@ a{text-decoration:none;color:inherit}
         <h3><i class="fas fa-clock"></i> Recent Activity</h3>
         <div id="recentActivity"></div>
       </div>
-      <div class="section-head">
-        <h2><i class="fas fa-plus-circle"></i> Quick Actions</h2>
-      </div>
+      <div class="section-head"><h2><i class="fas fa-plus-circle"></i> Quick Actions</h2></div>
       <div style="display:flex;gap:0.65rem;flex-wrap:wrap">
         <button class="btn btn-primary" onclick="startWizard()"><i class="fas fa-plus"></i> New Course</button>
         <button class="btn btn-outline" onclick="goPage('submissions')"><i class="fas fa-list"></i> My Courses</button>
@@ -345,7 +369,7 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
 
-    <!-- ═══════ SUBMISSIONS LIST ═══════ -->
+    <!-- SUBMISSIONS LIST -->
     <div class="page" id="page-submissions">
       <div class="section-head">
         <h2><i class="fas fa-folder-open"></i> My Courses</h2>
@@ -354,7 +378,7 @@ a{text-decoration:none;color:inherit}
       <div id="submissionsList"></div>
     </div>
 
-    <!-- ═══════ WIZARD ═══════ -->
+    <!-- WIZARD -->
     <div class="page" id="page-wizard">
       <div class="wizard-header">
         <div class="left">
@@ -363,14 +387,12 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="wizard-progress" id="wizardProgress"></div>
       </div>
-
       <div id="wizardFlash"></div>
 
-      <!-- STEP 1: BASIC INFO -->
+      <!-- STEP 1 -->
       <div class="step-panel active" data-step="1">
         <div class="step-title"><span class="n">1</span><h2>Basic Information</h2></div>
         <p class="step-desc">Start with the essentials — what is this course, who is it for, and what will students gain?</p>
-
         <div class="card">
           <div class="form-row">
             <div class="form-group"><label>Course Title *</label><input type="text" id="w_title" placeholder="e.g. Introduction to Computer Packages"></div>
@@ -380,23 +402,15 @@ a{text-decoration:none;color:inherit}
             <div class="form-group"><label>Category</label>
               <select id="w_category">
                 <option value="">Select...</option>
-                <option>IT & Technology</option>
-                <option>Business</option>
-                <option>Finance</option>
-                <option>Education</option>
-                <option>Design</option>
-                <option>Marketing</option>
-                <option>Personal Development</option>
-                <option>Other</option>
+                <option>IT & Technology</option><option>Business</option><option>Finance</option>
+                <option>Education</option><option>Design</option><option>Marketing</option>
+                <option>Personal Development</option><option>Other</option>
               </select>
             </div>
             <div class="form-group"><label>Level</label>
               <select id="w_level">
                 <option value="">Select...</option>
-                <option>Beginner</option>
-                <option>Intermediate</option>
-                <option>Advanced</option>
-                <option>Professional</option>
+                <option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Professional</option>
               </select>
             </div>
           </div>
@@ -407,7 +421,6 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="form-group"><label>Cover Image URL (optional)</label><input type="text" id="w_cover" placeholder="https://..."></div>
         </div>
-
         <div class="step-actions">
           <div></div>
           <div class="right">
@@ -417,16 +430,14 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
 
-      <!-- STEP 2: STRUCTURE -->
+      <!-- STEP 2 -->
       <div class="step-panel" data-step="2">
         <div class="step-title"><span class="n">2</span><h2>Course Structure</h2></div>
         <p class="step-desc">Break your course into modules. Each module should have a clear theme, and each lesson a specific focus.</p>
-
         <div class="card">
           <div id="w_modules"></div>
           <button class="btn btn-outline btn-sm" onclick="addModule()"><i class="fas fa-plus"></i> Add Module</button>
         </div>
-
         <div class="step-actions">
           <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
           <div class="right">
@@ -436,27 +447,139 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
 
-      <!-- STEP 3: CONTENT -->
+      <!-- STEP 3 — LESSON CONTENT (list of lessons + editor) -->
       <div class="step-panel" data-step="3">
-        <div class="step-title"><span class="n">3</span><h2>Lesson Content</h2></div>
-        <p class="step-desc">Add notes, video links, and assignments for each lesson. You can come back and complete this later.</p>
+        <!-- LESSON LIST VIEW -->
+        <div id="lessonListView">
+          <div class="step-title"><span class="n">3</span><h2>Lesson Content</h2></div>
+          <p class="step-desc">Now build the actual teaching material for each lesson. Click <strong>Edit</strong> on any lesson to open the full editor.</p>
+          <div class="card">
+            <div id="lessonListContent"></div>
+          </div>
+          <div class="step-actions">
+            <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="right">
+              <button class="btn btn-outline" onclick="saveWizardDraft()"><i class="fas fa-save"></i> Save Draft</button>
+              <button class="btn btn-primary" onclick="nextStep()">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
 
-        <div id="w_content_list"></div>
+        <!-- LESSON EDITOR VIEW -->
+        <div id="lessonEditorView" class="hidden">
+          <div class="lesson-editor-header">
+            <div>
+              <h2 id="leTitle">Lesson Title</h2>
+              <div class="sub" id="lePath">Module 1 → Lesson 1</div>
+            </div>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+              <button class="btn btn-outline btn-sm" onclick="closeLessonEditor()"><i class="fas fa-arrow-left"></i> Back to Lessons</button>
+              <button class="btn btn-primary btn-sm" onclick="saveLesson()"><i class="fas fa-save"></i> Save Lesson</button>
+            </div>
+          </div>
 
-        <div class="step-actions">
-          <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
-          <div class="right">
-            <button class="btn btn-outline" onclick="saveWizardDraft()"><i class="fas fa-save"></i> Save Draft</button>
-            <button class="btn btn-primary" onclick="nextStep()">Next <i class="fas fa-arrow-right"></i></button>
+          <div class="lesson-tabs" id="leTabs">
+            <button class="lesson-tab active" data-ltab="basic" onclick="switchLessonTab('basic')"><i class="fas fa-info-circle"></i> Basic</button>
+            <button class="lesson-tab" data-ltab="content" onclick="switchLessonTab('content')"><i class="fas fa-book-open"></i> Content</button>
+            <button class="lesson-tab" data-ltab="terms" onclick="switchLessonTab('terms')"><i class="fas fa-list"></i> Key Terms</button>
+            <button class="lesson-tab" data-ltab="activity" onclick="switchLessonTab('activity')"><i class="fas fa-hands"></i> Activity</button>
+            <button class="lesson-tab" data-ltab="summary" onclick="switchLessonTab('summary')"><i class="fas fa-flag-checkered"></i> Summary</button>
+          </div>
+
+          <!-- BASIC PANE -->
+          <div class="lesson-pane active" data-lpane="basic">
+            <div class="card">
+              <h3><i class="fas fa-info-circle"></i> Lesson Basics</h3>
+              <div class="form-row">
+                <div class="form-group"><label>Lesson Title *</label><input type="text" id="le_title" placeholder="e.g. What Is a Computer?"></div>
+                <div class="form-group"><label>Duration (minutes)</label><input type="number" id="le_duration" min="0" placeholder="15"></div>
+              </div>
+              <div class="form-group">
+                <label>Learning Objectives</label>
+                <div class="pane-hint">What should students be able to do after this lesson? Add one at a time.</div>
+                <div class="dynamic-list" id="le_objectives"></div>
+                <button class="btn btn-outline btn-sm" onclick="addObjective()"><i class="fas fa-plus"></i> Add Objective</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT PANE -->
+          <div class="lesson-pane" data-lpane="content">
+            <div class="card">
+              <h3><i class="fas fa-comment"></i> Introduction</h3>
+              <div class="pane-hint">A short paragraph — what is this lesson about?</div>
+              <textarea id="le_intro" rows="3" placeholder="In this lesson, you will learn..."></textarea>
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-book-open"></i> Main Lesson Notes</h3>
+              <div class="pane-hint">The core teaching content. Use headings, bullets, and numbered lists. Line breaks are preserved for students.</div>
+              <textarea id="le_notes" rows="12" style="min-height:250px" placeholder="WHAT IS A COMPUTER?&#10;&#10;A computer is an electronic device that receives data, processes it...&#10;&#10;1. Input&#10;2. Processing&#10;3. Storage&#10;4. Output"></textarea>
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-video"></i> Video Lesson</h3>
+              <div class="pane-hint">Paste a direct video URL (MP4) or an embeddable link. File uploads coming in Phase 2b.</div>
+              <input type="text" id="le_video" placeholder="https://... (MP4 URL)">
+            </div>
+          </div>
+
+          <!-- TERMS PANE -->
+          <div class="lesson-pane" data-lpane="terms">
+            <div class="card">
+              <h3><i class="fas fa-list"></i> Key Terms</h3>
+              <div class="pane-hint">A mini-glossary for this lesson. Students can reference these while studying.</div>
+              <div id="le_terms"></div>
+              <button class="btn btn-outline btn-sm" onclick="addTerm()"><i class="fas fa-plus"></i> Add Term</button>
+            </div>
+          </div>
+
+          <!-- ACTIVITY PANE -->
+          <div class="lesson-pane" data-lpane="activity">
+            <div class="card">
+              <h3><i class="fas fa-hands"></i> Practical Activity (optional)</h3>
+              <div class="pane-hint">Give students a hands-on task to complete after this lesson.</div>
+              <div class="form-group"><label>Activity Title</label><input type="text" id="le_activity_title" placeholder="e.g. Identify Computer Components"></div>
+              <div class="form-group"><label>Instructions</label><textarea id="le_activity_instructions" rows="4" placeholder="Look at a computer and identify:&#10;1. Monitor&#10;2. Keyboard&#10;3. Mouse"></textarea></div>
+              <div class="form-group">
+                <label>Submission Required?</label>
+                <div style="display:flex;gap:1rem;margin-top:0.4rem">
+                  <label style="display:flex;align-items:center;gap:0.4rem;font-weight:400;cursor:pointer">
+                    <input type="radio" name="le_activity_submit" value="no" checked onchange="updateActivitySubmit()"> No
+                  </label>
+                  <label style="display:flex;align-items:center;gap:0.4rem;font-weight:400;cursor:pointer">
+                    <input type="radio" name="le_activity_submit" value="yes" onchange="updateActivitySubmit()"> Yes
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUMMARY PANE -->
+          <div class="lesson-pane" data-lpane="summary">
+            <div class="card">
+              <h3><i class="fas fa-flag-checkered"></i> Lesson Summary</h3>
+              <div class="pane-hint">A short recap of what was covered. Appears at the end of the lesson for students.</div>
+              <textarea id="le_summary" rows="5" placeholder="In this lesson, you learned:&#10;&#10;• What a computer is&#10;• The four basic computer functions"></textarea>
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-clipboard-check"></i> Lesson Readiness</h3>
+              <div id="le_checklist"></div>
+            </div>
+          </div>
+
+          <div class="step-actions" style="margin-top:1.5rem">
+            <button class="btn btn-outline" onclick="prevLesson()"><i class="fas fa-arrow-left"></i> Previous Lesson</button>
+            <div class="right">
+              <button class="btn btn-outline" onclick="saveLesson()"><i class="fas fa-save"></i> Save</button>
+              <button class="btn btn-success" onclick="saveAndNextLesson()">Save & Next Lesson <i class="fas fa-arrow-right"></i></button>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- STEP 4: EXAM -->
+      <!-- STEP 4 -->
       <div class="step-panel" data-step="4">
         <div class="step-title"><span class="n">4</span><h2>Examination</h2></div>
         <p class="step-desc">Create the final exam. Multiple choice questions only — the system grades them automatically.</p>
-
         <div class="card">
           <div class="form-row-3">
             <div class="form-group"><label>Pass Mark (%)</label><input type="number" id="w_exam_pass" min="0" max="100" value="50"></div>
@@ -464,13 +587,11 @@ a{text-decoration:none;color:inherit}
             <div class="form-group"><label>CAT Pass Mark (%)</label><input type="number" id="w_cat_pass" min="0" max="100" value="50"></div>
           </div>
         </div>
-
         <div class="card">
           <h3><i class="fas fa-question-circle"></i> Exam Questions <span class="badge badge-active" id="w_qcount">0</span></h3>
           <div id="w_questions"></div>
           <button class="btn btn-outline btn-sm" onclick="addQuestion()"><i class="fas fa-plus"></i> Add Question</button>
         </div>
-
         <div class="step-actions">
           <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
           <div class="right">
@@ -480,13 +601,11 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
 
-      <!-- STEP 5: PREVIEW & SUBMIT -->
+      <!-- STEP 5 -->
       <div class="step-panel" data-step="5">
         <div class="step-title"><span class="n">5</span><h2>Preview & Submit</h2></div>
         <p class="step-desc">Review your course one last time. When you submit, it goes to the admin for review.</p>
-
         <div id="w_preview"></div>
-
         <div class="step-actions">
           <button class="btn btn-outline" onclick="prevStep()"><i class="fas fa-arrow-left"></i> Back</button>
           <div class="right">
@@ -498,27 +617,22 @@ a{text-decoration:none;color:inherit}
 
     </div>
 
-    <!-- ═══════ MANUALS ═══════ -->
+    <!-- MANUALS -->
     <div class="page" id="page-manuals">
-      <div class="section-head">
-        <h2><i class="fas fa-book"></i> Course Manuals</h2>
-      </div>
+      <div class="section-head"><h2><i class="fas fa-book"></i> Course Manuals</h2></div>
       <p style="color:var(--text-secondary);margin-bottom:1.25rem;font-size:0.88rem">Download manuals for assigned courses.</p>
       <div id="manualsList"></div>
     </div>
 
-    <!-- ═══════ PROFILE ═══════ -->
+    <!-- PROFILE -->
     <div class="page" id="page-profile">
-      <div class="section-head">
-        <h2><i class="fas fa-user"></i> My Profile</h2>
-      </div>
+      <div class="section-head"><h2><i class="fas fa-user"></i> My Profile</h2></div>
       <div class="card" id="profileContent"></div>
     </div>
 
   </main>
 </div>
 
-<!-- ═══════ VIEW MODAL ═══════ -->
 <div class="modal-backdrop" id="viewModal">
   <div class="modal-box">
     <h2><i class="fas fa-file-alt"></i> Submission Details</h2>
@@ -533,7 +647,6 @@ a{text-decoration:none;color:inherit}
 const API_BASE = 'https://nexora-api-sskg.onrender.com/api';
 const GOOGLE_CLIENT_ID = '243689444748-tm3cu1e9jg9j3tf8i2h2f0cgnpgsr239.apps.googleusercontent.com';
 
-// ─── API HELPERS ───
 async function api(path, options = {}) {
   const opts = {
     credentials: 'include',
@@ -547,31 +660,24 @@ async function api(path, options = {}) {
   if (ct.includes('application/json')) data = await res.json().catch(() => null);
   if (!res.ok) {
     const err = new Error((data && data.error) || `HTTP ${res.status}`);
-    err.status = res.status;
-    err.data = data;
-    throw err;
+    err.status = res.status; err.data = data; throw err;
   }
   return data;
 }
 
-// ─── STATE ───
 let currentUser = null;
 let wizard = {
-  id: null,
-  step: 1,
-  status: 'draft',
+  id: null, step: 1, status: 'draft', maxStepReached: 1,
   data: {
     title: '', code: '', category: '', level: '', description: '',
     duration: '', price: 0, cover_image_url: '',
-    modules: [],
+    modules: [], questions: [],
     cat_pass_mark: 50, exam_pass_mark: 50,
     cat_unlock_hours: 24, exam_unlock_hours: 72,
-    questions: [],
   },
-  maxStepReached: 1,
 };
+let lessonEditor = { moduleIdx: null, lessonIdx: null, tab: 'basic' };
 
-// ─── UTILS ───
 function esc(s) {
   return (s == null ? '' : String(s))
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -586,44 +692,31 @@ function showFlash(id, msg, type = 'info') {
   setTimeout(() => { el.innerHTML = ''; }, 8000);
 }
 function statusLabel(s) {
-  const map = {
-    draft: 'Draft', pending_review: 'Pending Review', changes_requested: 'Changes Requested',
-    approved: 'Approved', published: 'Published', rejected: 'Rejected',
-  };
+  const map = { draft:'Draft', pending_review:'Pending Review', changes_requested:'Changes Requested', approved:'Approved', published:'Published', rejected:'Rejected' };
   return map[s] || s;
 }
 function statusBadge(s) { return `<span class="badge badge-${s}">${statusLabel(s)}</span>`; }
 
 function toggleSidebar() {
-  const sb = document.getElementById('sidebar');
-  const bd = document.getElementById('sidebarBackdrop');
-  sb.classList.toggle('open');
-  bd.classList.toggle('active');
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarBackdrop').classList.toggle('active');
 }
 function closeSidebar() {
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('sidebarBackdrop').classList.remove('active');
 }
 
-// ─── ROUTING ───
 function goPage(name) {
-  if (!currentUser) { name = 'login'; }
-  // Allow dashboard-only pages when no wizard is active
-  if (name !== 'wizard') {
-    document.getElementById('wizardSidebar').classList.add('hidden');
-  }
+  if (!currentUser) name = 'login';
+  if (name !== 'wizard') document.getElementById('wizardSidebar').classList.add('hidden');
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('page-' + name);
   if (el) el.classList.add('active');
-
-  // Update sidebar active
   document.querySelectorAll('.sidebar .item').forEach(it => {
     it.classList.toggle('active', it.dataset.page === name);
   });
-
   closeSidebar();
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
   if (name === 'dashboard') loadDashboard();
   if (name === 'submissions') loadSubmissions();
   if (name === 'manuals') loadManuals();
@@ -631,21 +724,13 @@ function goPage(name) {
 }
 
 function switchAuthTab(tab) {
-  const loginTab = document.getElementById('tabLogin');
-  const signupTab = document.getElementById('tabSignup');
-  const loginForm = document.getElementById('loginForm');
-  const signupForm = document.getElementById('signupForm');
-  if (tab === 'login') {
-    loginTab.classList.add('active'); signupTab.classList.remove('active');
-    loginForm.classList.remove('hidden'); signupForm.classList.add('hidden');
-  } else {
-    signupTab.classList.add('active'); loginTab.classList.remove('active');
-    signupForm.classList.remove('hidden'); loginForm.classList.add('hidden');
-  }
+  const lT = document.getElementById('tabLogin'), sT = document.getElementById('tabSignup');
+  const lF = document.getElementById('loginForm'), sF = document.getElementById('signupForm');
+  if (tab === 'login') { lT.classList.add('active'); sT.classList.remove('active'); lF.classList.remove('hidden'); sF.classList.add('hidden'); }
+  else { sT.classList.add('active'); lT.classList.remove('active'); sF.classList.remove('hidden'); lF.classList.add('hidden'); }
   document.getElementById('loginFlash').innerHTML = '';
 }
 
-// ─── BOOT ───
 async function boot() {
   try {
     const { user } = await api('/auth/me');
@@ -660,7 +745,6 @@ async function boot() {
   goPage('login');
   renderGoogleButtons();
 }
-
 function showApp() {
   document.getElementById('mainLayout').classList.remove('hidden');
   document.getElementById('navWho').classList.remove('hidden');
@@ -670,7 +754,6 @@ function showApp() {
   goPage('dashboard');
 }
 
-// ─── AUTH ───
 async function loginUser(e) {
   e.preventDefault();
   const btn = document.getElementById('loginBtn');
@@ -682,20 +765,14 @@ async function loginUser(e) {
     }});
     const { user } = await api('/auth/me');
     if (!user || (user.role !== 'contributor' && user.role !== 'admin')) {
-      await api('/auth/logout', { method: 'POST' });
-      throw new Error('Access denied. This portal is for contributors only.');
+      await api('/auth/logout', { method: 'POST' }); throw new Error('Access denied. This portal is for contributors only.');
     }
     if (user.role === 'contributor' && user.status !== 'active') {
-      await api('/auth/logout', { method: 'POST' });
-      throw new Error('Your contributor account is pending admin approval.');
+      await api('/auth/logout', { method: 'POST' }); throw new Error('Your contributor account is pending admin approval.');
     }
-    currentUser = user;
-    showApp();
-  } catch (err) {
-    showFlash('loginFlash', '❌ ' + (err.data?.error || err.message), 'danger');
-  } finally {
-    btn.disabled = false; btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
-  }
+    currentUser = user; showApp();
+  } catch (err) { showFlash('loginFlash', '❌ ' + (err.data?.error || err.message), 'danger'); }
+  finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In'; }
 }
 
 async function signupContributor(e) {
@@ -704,12 +781,8 @@ async function signupContributor(e) {
   const pw = document.getElementById('suPassword').value;
   const pwc = document.getElementById('suPasswordConfirm').value;
   if (pw !== pwc) { showFlash('loginFlash', '❌ Passwords do not match', 'danger'); return; }
-  if (pw.length < 8 || !/[A-Z]/.test(pw) || !/\d/.test(pw)) {
-    showFlash('loginFlash', '❌ Password needs 8+ chars, 1 uppercase, 1 number', 'danger'); return;
-  }
-  if (!document.getElementById('suTerms').checked) {
-    showFlash('loginFlash', '❌ Please accept the terms', 'danger'); return;
-  }
+  if (pw.length < 8 || !/[A-Z]/.test(pw) || !/\d/.test(pw)) { showFlash('loginFlash', '❌ Password needs 8+ chars, 1 uppercase, 1 number', 'danger'); return; }
+  if (!document.getElementById('suTerms').checked) { showFlash('loginFlash', '❌ Please accept the terms', 'danger'); return; }
   btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating...';
   try {
     await api('/contributor/signup', { method: 'POST', body: {
@@ -723,11 +796,8 @@ async function signupContributor(e) {
     showFlash('loginFlash', '✅ Account created! An admin will review your application.', 'success');
     document.getElementById('signupForm').reset();
     setTimeout(() => switchAuthTab('login'), 4000);
-  } catch (err) {
-    showFlash('loginFlash', '❌ ' + (err.data?.error || err.message), 'danger');
-  } finally {
-    btn.disabled = false; btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
-  }
+  } catch (err) { showFlash('loginFlash', '❌ ' + (err.data?.error || err.message), 'danger'); }
+  finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account'; }
 }
 
 async function logout() {
@@ -736,11 +806,10 @@ async function logout() {
   document.getElementById('mainLayout').classList.add('hidden');
   document.getElementById('navWho').classList.add('hidden');
   document.getElementById('navLogout').classList.add('hidden');
-  goPage('login');
-  switchAuthTab('login');
+  goPage('login'); switchAuthTab('login');
 }
 
-// ─── GOOGLE ───
+/* GOOGLE */
 let googleInitialized = false;
 function renderGoogleButtons() {
   if (!window.google || !window.google.accounts) return false;
@@ -776,13 +845,8 @@ async function handleGoogleContributor(response) {
       body: JSON.stringify({ credential: response.credential }),
     });
     const data = await res.json();
-    if (!res.ok) {
-      showFlash('loginFlash', '❌ ' + (data.error || 'Google sign-in failed'), 'danger'); return;
-    }
-    if (data.isNew) {
-      showFlash('loginFlash', '✅ Account created with Google! An admin will review it. You can log in once approved.', 'success');
-      return;
-    }
+    if (!res.ok) { showFlash('loginFlash', '❌ ' + (data.error || 'Google sign-in failed'), 'danger'); return; }
+    if (data.isNew) { showFlash('loginFlash', '✅ Account created with Google! An admin will review it. You can log in once approved.', 'success'); return; }
     const { user } = await api('/auth/me');
     if (!user || (user.role !== 'contributor' && user.role !== 'admin')) {
       await api('/auth/logout', { method: 'POST' }); throw new Error('Not a contributor account');
@@ -790,18 +854,15 @@ async function handleGoogleContributor(response) {
     if (user.role === 'contributor' && user.status !== 'active') {
       await api('/auth/logout', { method: 'POST' }); throw new Error('Account pending approval');
     }
-    currentUser = user;
-    showApp();
-  } catch (err) {
-    showFlash('loginFlash', '❌ ' + (err.message || 'Unable to connect'), 'danger');
-  }
+    currentUser = user; showApp();
+  } catch (err) { showFlash('loginFlash', '❌ ' + (err.message || 'Unable to connect'), 'danger'); }
 }
 setInterval(() => {
-  const loginPage = document.getElementById('page-login');
-  if (loginPage && loginPage.classList.contains('active')) renderGoogleButtons();
+  const lp = document.getElementById('page-login');
+  if (lp && lp.classList.contains('active')) renderGoogleButtons();
 }, 500);
 
-// ─── DASHBOARD ───
+/* DASHBOARD */
 async function loadDashboard() {
   const statsEl = document.getElementById('dashStats');
   const recentEl = document.getElementById('recentActivity');
@@ -834,7 +895,7 @@ async function loadDashboard() {
   }
 }
 
-// ─── SUBMISSIONS LIST ───
+/* SUBMISSIONS LIST */
 async function loadSubmissions() {
   const el = document.getElementById('submissionsList');
   el.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><h3>Loading...</h3></div>';
@@ -864,7 +925,7 @@ async function loadSubmissions() {
   }
 }
 
-// ─── MANUALS ───
+/* MANUALS */
 async function loadManuals() {
   const el = document.getElementById('manualsList');
   el.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><h3>Loading...</h3></div>';
@@ -887,7 +948,7 @@ async function loadManuals() {
   }
 }
 
-// ─── PROFILE ───
+/* PROFILE */
 async function loadProfile() {
   const el = document.getElementById('profileContent');
   el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><i class="fas fa-spinner fa-spin"></i></div>';
@@ -916,10 +977,7 @@ async function loadProfile() {
   }
 }
 
-/* ══════════════════════════════════════════════════
-   WIZARD
-   ══════════════════════════════════════════════════ */
-
+/* WIZARD */
 function resetWizard() {
   wizard = {
     id: null, step: 1, status: 'draft', maxStepReached: 1,
@@ -933,8 +991,29 @@ function resetWizard() {
   };
 }
 
+// Normalize a lesson to make sure every field exists
+function normalizeLesson(l) {
+  return {
+    title: l.title || '',
+    description: l.description || '',
+    duration_minutes: l.duration_minutes || '',
+    objectives: Array.isArray(l.objectives) ? l.objectives : [],
+    introduction: l.introduction || '',
+    notes: l.notes || '',
+    video_url: l.video_url || '',
+    terms: Array.isArray(l.terms) ? l.terms : [],
+    activity_title: l.activity_title || '',
+    activity_instructions: l.activity_instructions || '',
+    activity_submission_required: !!l.activity_submission_required,
+    summary: l.summary || '',
+    assignment: l.assignment || '',
+    position: l.position || 1,
+  };
+}
+
 function startWizard(submission) {
   if (submission) {
+    const mods = Array.isArray(submission.modules) ? submission.modules : [];
     wizard = {
       id: submission.id,
       step: 1,
@@ -949,7 +1028,11 @@ function startWizard(submission) {
         duration: submission.duration || '',
         price: parseFloat(submission.price || 0),
         cover_image_url: submission.cover_image_url || '',
-        modules: Array.isArray(submission.modules) ? JSON.parse(JSON.stringify(submission.modules)) : [],
+        modules: mods.map(m => ({
+          title: m.title || '',
+          position: m.position || 1,
+          lessons: (Array.isArray(m.lessons) ? m.lessons : []).map(normalizeLesson),
+        })),
         questions: Array.isArray(submission.questions) ? JSON.parse(JSON.stringify(submission.questions)) : [],
         cat_pass_mark: submission.cat_pass_mark || 50,
         exam_pass_mark: submission.exam_pass_mark || 50,
@@ -964,20 +1047,17 @@ function startWizard(submission) {
   const badge = document.getElementById('wizardStatusBadge');
   badge.textContent = statusLabel(wizard.status);
   badge.className = 'badge badge-' + wizard.status;
-
   document.getElementById('wizardSidebar').classList.remove('hidden');
   loadWizardFields();
   goToStep(wizard.step);
   goPage('wizard');
 }
-
 function cancelWizard() {
-  if (!confirm('Exit the wizard? Your unsaved changes will be lost. Use "Save Draft" first if you want to keep them.')) return;
+  if (!confirm('Exit the wizard? Use "Save Draft" first if you want to keep your work.')) return;
   document.getElementById('wizardSidebar').classList.add('hidden');
   resetWizard();
   goPage('submissions');
 }
-
 function loadWizardFields() {
   document.getElementById('w_title').value = wizard.data.title || '';
   document.getElementById('w_code').value = wizard.data.code || '';
@@ -991,7 +1071,6 @@ function loadWizardFields() {
   document.getElementById('w_exam_unlock').value = wizard.data.exam_unlock_hours || 72;
   document.getElementById('w_cat_pass').value = wizard.data.cat_pass_mark || 50;
 }
-
 function captureBasicFields() {
   wizard.data.title = document.getElementById('w_title').value.trim();
   wizard.data.code = document.getElementById('w_code').value.trim();
@@ -1010,9 +1089,11 @@ function captureExamFields() {
 
 function goToStep(n) {
   n = Math.max(1, Math.min(5, n));
-  // Capture current step before leaving
   if (wizard.step === 1) captureBasicFields();
   if (wizard.step === 4) captureExamFields();
+
+  // If leaving step 3 while editor is open, close it
+  if (wizard.step === 3 && n !== 3) closeLessonEditor(true);
 
   wizard.step = n;
   wizard.maxStepReached = Math.max(wizard.maxStepReached, n);
@@ -1021,31 +1102,26 @@ function goToStep(n) {
   const panel = document.querySelector(`.step-panel[data-step="${n}"]`);
   if (panel) panel.classList.add('active');
 
-  // Update sidebar
   document.querySelectorAll('.sidebar .item[data-step]').forEach(it => {
     const s = parseInt(it.dataset.step);
     it.classList.remove('active', 'done', 'current', 'locked');
     if (s < wizard.maxStepReached) it.classList.add('done');
-    if (s === n) it.classList.add('current');
-    it.classList.toggle('active', s === n);
+    if (s === n) it.classList.add('current', 'active');
   });
 
-  // Update progress dots
   const prog = document.getElementById('wizardProgress');
   prog.innerHTML = [1,2,3,4,5].map(i => {
     const cls = i < n ? 'done' : (i === n ? 'current' : '');
     return `<span class="dot ${cls}"></span>`;
   }).join('') + `<span style="margin-left:0.5rem">Step ${n} of 5</span>`;
 
-  // Render step-specific content
   if (n === 2) renderModules();
-  if (n === 3) renderContentList();
+  if (n === 3) { closeLessonEditor(true); renderLessonList(); }
   if (n === 4) renderQuestions();
   if (n === 5) renderPreview();
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 function nextStep() {
   if (wizard.step === 1) {
     captureBasicFields();
@@ -1054,9 +1130,7 @@ function nextStep() {
   if (wizard.step === 4) captureExamFields();
   goToStep(wizard.step + 1);
 }
-function prevStep() {
-  goToStep(wizard.step - 1);
-}
+function prevStep() { goToStep(wizard.step - 1); }
 
 /* STEP 2 — MODULES */
 function renderModules() {
@@ -1103,7 +1177,7 @@ function removeModule(mi) {
 }
 function addLesson(mi) {
   if (!wizard.data.modules[mi].lessons) wizard.data.modules[mi].lessons = [];
-  wizard.data.modules[mi].lessons.push({ title: '', description: '', video_url: '', notes: '', assignment: '', position: wizard.data.modules[mi].lessons.length + 1 });
+  wizard.data.modules[mi].lessons.push(normalizeLesson({}));
   renderModules();
 }
 function removeLesson(mi, li) {
@@ -1112,36 +1186,290 @@ function removeLesson(mi, li) {
   renderModules();
 }
 
-/* STEP 3 — CONTENT */
-function renderContentList() {
-  const el = document.getElementById('w_content_list');
+/* STEP 3 — LESSON LIST + EDITOR */
+function lessonCompleteness(lesson) {
+  const checks = [
+    { ok: !!lesson.title, label: 'Title' },
+    { ok: (lesson.objectives || []).filter(o => o && o.trim()).length > 0, label: 'Objectives' },
+    { ok: !!lesson.introduction, label: 'Introduction' },
+    { ok: !!lesson.notes, label: 'Notes' },
+    { ok: !!lesson.summary, label: 'Summary' },
+  ];
+  const optional = [
+    { ok: !!lesson.video_url },
+    { ok: (lesson.terms || []).length > 0 },
+    { ok: !!lesson.activity_title },
+  ];
+  const okRequired = checks.filter(c => c.ok).length;
+  const okOptional = optional.filter(c => c.ok).length;
+  const pct = Math.round(((okRequired + okOptional * 0.5) / (checks.length + optional.length * 0.5)) * 100);
+  return { checks, optional, okRequired, okOptional, pct, ready: okRequired === checks.length };
+}
+
+function renderLessonList() {
+  const el = document.getElementById('lessonListContent');
   if (!wizard.data.modules.length) {
     el.innerHTML = '<div class="empty-state" style="padding:2rem"><i class="fas fa-layer-group"></i><h3>No modules yet</h3><p>Go back to Step 2 to add modules and lessons first.</p></div>';
     return;
   }
+  let anyLesson = false;
   let html = '';
   wizard.data.modules.forEach((m, mi) => {
-    (m.lessons || []).forEach((l, li) => {
-      html += `
-        <div class="card">
-          <h3><i class="fas fa-play-circle"></i> ${mi + 1}.${li + 1} ${esc(l.title || '(untitled)')}</h3>
-          <div class="form-group">
-            <label>Video URL</label>
-            <input type="text" value="${esc(l.video_url || '')}" oninput="wizard.data.modules[${mi}].lessons[${li}].video_url = this.value" placeholder="https://... (MP4 or embed)">
+    if (!m.lessons || !m.lessons.length) return;
+    anyLesson = true;
+    html += `<div style="margin-bottom:1.25rem">
+      <div style="font-size:0.85rem;font-weight:700;color:var(--navy);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:0.5rem;opacity:0.7">Module ${mi + 1}: ${esc(m.title || '(untitled)')}</div>
+      ${m.lessons.map((l, li) => {
+        const c = lessonCompleteness(l);
+        const badge = c.ready ? '<span class="badge badge-ready">Ready</span>' : (c.pct > 0 ? '<span class="badge badge-partial">In Progress</span>' : '<span class="badge badge-incomplete">Empty</span>');
+        return `
+          <div class="lesson-list-item">
+            <div class="info">
+              <h4>${mi + 1}.${li + 1} ${esc(l.title || '(untitled lesson)')}</h4>
+              <div class="meta">${c.okRequired}/${c.checks.length} required fields • ${c.pct}% complete</div>
+            </div>
+            <div class="actions">
+              ${badge}
+              <button class="btn btn-primary btn-sm" onclick="openLessonEditor(${mi}, ${li})"><i class="fas fa-edit"></i> Edit</button>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Notes / Content</label>
-            <textarea rows="3" oninput="wizard.data.modules[${mi}].lessons[${li}].notes = this.value" placeholder="Lesson content, key points, notes...">${esc(l.notes || '')}</textarea>
-          </div>
-          <div class="form-group">
-            <label>Assignment (optional)</label>
-            <textarea rows="2" oninput="wizard.data.modules[${mi}].lessons[${li}].assignment = this.value" placeholder="What should students do after this lesson?">${esc(l.assignment || '')}</textarea>
-          </div>
-        </div>
-      `;
-    });
+        `;
+      }).join('')}
+    </div>`;
   });
-  el.innerHTML = html || '<div class="empty-state"><p>No lessons to fill yet. Add them in Step 2.</p></div>';
+  el.innerHTML = anyLesson ? html : '<div class="empty-state" style="padding:2rem"><i class="fas fa-file-alt"></i><h3>No lessons yet</h3><p>Add lessons in Step 2 first.</p></div>';
+}
+
+function openLessonEditor(mi, li) {
+  lessonEditor = { moduleIdx: mi, lessonIdx: li, tab: 'basic' };
+  document.getElementById('lessonListView').classList.add('hidden');
+  document.getElementById('lessonEditorView').classList.remove('hidden');
+  loadLessonIntoEditor();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function closeLessonEditor(silent) {
+  if (!silent && lessonEditor.moduleIdx !== null) {
+    // Capture current state before closing
+    captureLessonFields();
+  }
+  document.getElementById('lessonEditorView').classList.add('hidden');
+  document.getElementById('lessonListView').classList.remove('hidden');
+  lessonEditor = { moduleIdx: null, lessonIdx: null, tab: 'basic' };
+  if (!silent) renderLessonList();
+}
+
+function loadLessonIntoEditor() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  const m = wizard.data.modules[moduleIdx];
+  const l = m.lessons[lessonIdx];
+
+  document.getElementById('leTitle').textContent = l.title || 'Untitled Lesson';
+  document.getElementById('lePath').textContent = `Module ${moduleIdx + 1}: ${m.title || '(untitled)'} → Lesson ${lessonIdx + 1}`;
+
+  document.getElementById('le_title').value = l.title || '';
+  document.getElementById('le_duration').value = l.duration_minutes || '';
+  document.getElementById('le_intro').value = l.introduction || '';
+  document.getElementById('le_notes').value = l.notes || '';
+  document.getElementById('le_video').value = l.video_url || '';
+  document.getElementById('le_activity_title').value = l.activity_title || '';
+  document.getElementById('le_activity_instructions').value = l.activity_instructions || '';
+  document.getElementById('le_summary').value = l.summary || '';
+
+  const radio = document.querySelector(`input[name="le_activity_submit"][value="${l.activity_submission_required ? 'yes' : 'no'}"]`);
+  if (radio) radio.checked = true;
+
+  renderObjectives();
+  renderTerms();
+  switchLessonTab(lessonEditor.tab || 'basic');
+  updateLessonChecklist();
+}
+
+function switchLessonTab(tab) {
+  // Capture current tab's fields first
+  captureLessonFields(true);
+
+  lessonEditor.tab = tab;
+  document.querySelectorAll('.lesson-tab').forEach(t => t.classList.toggle('active', t.dataset.ltab === tab));
+  document.querySelectorAll('.lesson-pane').forEach(p => p.classList.toggle('active', p.dataset.lpane === tab));
+
+  // Update tab done indicators
+  updateTabDoneMarkers();
+}
+
+function captureLessonFields(skipRerender) {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  if (moduleIdx === null) return;
+  const l = wizard.data.modules[moduleIdx].lessons[lessonIdx];
+
+  l.title = document.getElementById('le_title').value.trim();
+  l.duration_minutes = document.getElementById('le_duration').value ? parseInt(document.getElementById('le_duration').value) : null;
+  l.introduction = document.getElementById('le_intro').value.trim();
+  l.notes = document.getElementById('le_notes').value;
+  l.video_url = document.getElementById('le_video').value.trim();
+  l.activity_title = document.getElementById('le_activity_title').value.trim();
+  l.activity_instructions = document.getElementById('le_activity_instructions').value;
+  const radio = document.querySelector('input[name="le_activity_submit"]:checked');
+  l.activity_submission_required = radio && radio.value === 'yes';
+  l.summary = document.getElementById('le_summary').value.trim();
+
+  if (!skipRerender) {
+    document.getElementById('leTitle').textContent = l.title || 'Untitled Lesson';
+    updateLessonChecklist();
+    updateTabDoneMarkers();
+  }
+}
+
+function updateTabDoneMarkers() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  if (moduleIdx === null) return;
+  const l = wizard.data.modules[moduleIdx].lessons[lessonIdx];
+  const done = {
+    basic: !!(l.title && l.objectives && l.objectives.filter(o => o && o.trim()).length),
+    content: !!(l.introduction && l.notes),
+    terms: (l.terms || []).length > 0,
+    activity: !!l.activity_title,
+    summary: !!l.summary,
+  };
+  document.querySelectorAll('.lesson-tab').forEach(t => {
+    t.classList.toggle('done', !!done[t.dataset.ltab]);
+  });
+}
+
+function updateLessonChecklist() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  if (moduleIdx === null) return;
+  const l = wizard.data.modules[moduleIdx].lessons[lessonIdx];
+  const c = lessonCompleteness(l);
+  const el = document.getElementById('le_checklist');
+  el.innerHTML = `
+    <div class="progress-mini"><div class="fill" style="width:${c.pct}%"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+      <strong style="color:var(--navy);font-size:0.88rem">Required</strong>
+      <span style="color:var(--text-secondary);font-size:0.78rem">${c.okRequired}/${c.checks.length}</span>
+    </div>
+    ${c.checks.map(x => `<div class="check ${x.ok ? 'ok' : ''}">${x.ok ? '✓' : '○'} ${x.label}</div>`).join('')}
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:1rem 0 0.5rem">
+      <strong style="color:var(--navy);font-size:0.88rem">Optional</strong>
+      <span style="color:var(--text-secondary);font-size:0.78rem">${c.okOptional}/${c.optional.length}</span>
+    </div>
+    <div class="check ${l.video_url ? 'ok' : ''}">${l.video_url ? '✓' : '○'} Video URL</div>
+    <div class="check ${(l.terms || []).length ? 'ok' : ''}">${(l.terms || []).length ? '✓' : '○'} Key terms added</div>
+    <div class="check ${l.activity_title ? 'ok' : ''}">${l.activity_title ? '✓' : '○'} Practical activity</div>
+  `;
+}
+
+/* OBJECTIVES */
+function renderObjectives() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  if (moduleIdx === null) return;
+  const objectives = wizard.data.modules[moduleIdx].lessons[lessonIdx].objectives || [];
+  const el = document.getElementById('le_objectives');
+  if (!objectives.length) {
+    el.innerHTML = '<div style="font-size:0.82rem;color:var(--text-secondary);padding:0.5rem 0">No objectives yet. Add one below.</div>';
+    return;
+  }
+  el.innerHTML = objectives.map((o, oi) => `
+    <div class="dynamic-row">
+      <input type="text" value="${esc(o)}" oninput="wizard.data.modules[${moduleIdx}].lessons[${lessonIdx}].objectives[${oi}] = this.value; updateTabDoneMarkers();" placeholder="e.g. Explain what a computer is">
+      <button onclick="removeObjective(${oi})"><i class="fas fa-times"></i></button>
+    </div>
+  `).join('');
+}
+function addObjective() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  const l = wizard.data.modules[moduleIdx].lessons[lessonIdx];
+  l.objectives = l.objectives || [];
+  l.objectives.push('');
+  renderObjectives();
+}
+function removeObjective(oi) {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  wizard.data.modules[moduleIdx].lessons[lessonIdx].objectives.splice(oi, 1);
+  renderObjectives();
+}
+
+/* TERMS */
+function renderTerms() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  if (moduleIdx === null) return;
+  const terms = wizard.data.modules[moduleIdx].lessons[lessonIdx].terms || [];
+  const el = document.getElementById('le_terms');
+  if (!terms.length) {
+    el.innerHTML = '<div style="font-size:0.82rem;color:var(--text-secondary);padding:0.5rem 0">No terms yet. Add one below.</div>';
+    return;
+  }
+  el.innerHTML = terms.map((t, ti) => `
+    <div class="term-row">
+      <input type="text" value="${esc(t.term || '')}" oninput="wizard.data.modules[${moduleIdx}].lessons[${lessonIdx}].terms[${ti}].term = this.value; updateTabDoneMarkers();" placeholder="Term">
+      <textarea rows="2" oninput="wizard.data.modules[${moduleIdx}].lessons[${lessonIdx}].terms[${ti}].definition = this.value" placeholder="Definition">${esc(t.definition || '')}</textarea>
+      <button onclick="removeTerm(${ti})"><i class="fas fa-times"></i></button>
+    </div>
+  `).join('');
+}
+function addTerm() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  const l = wizard.data.modules[moduleIdx].lessons[lessonIdx];
+  l.terms = l.terms || [];
+  l.terms.push({ term: '', definition: '' });
+  renderTerms();
+}
+function removeTerm(ti) {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  wizard.data.modules[moduleIdx].lessons[lessonIdx].terms.splice(ti, 1);
+  renderTerms();
+  updateTabDoneMarkers();
+}
+
+function updateActivitySubmit() {}
+
+/* LESSON NAVIGATION */
+function prevLesson() {
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  captureLessonFields();
+  // Find the previous lesson in the whole course
+  let found = false;
+  for (let mi = moduleIdx; mi >= 0; mi--) {
+    const lessons = wizard.data.modules[mi].lessons || [];
+    const startLi = (mi === moduleIdx) ? lessonIdx - 1 : lessons.length - 1;
+    for (let li = startLi; li >= 0; li--) {
+      lessonEditor = { moduleIdx: mi, lessonIdx: li, tab: 'basic' };
+      loadLessonIntoEditor();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+  }
+  alert('This is the first lesson.');
+}
+function saveAndNextLesson() {
+  saveLesson(true);
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  // Find next lesson
+  for (let mi = moduleIdx; mi < wizard.data.modules.length; mi++) {
+    const lessons = wizard.data.modules[mi].lessons || [];
+    const startLi = (mi === moduleIdx) ? lessonIdx + 1 : 0;
+    for (let li = startLi; li < lessons.length; li++) {
+      lessonEditor = { moduleIdx: mi, lessonIdx: li, tab: 'basic' };
+      loadLessonIntoEditor();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+  }
+  // No more lessons — close editor
+  closeLessonEditor();
+  showFlash('wizardFlash', '✅ Last lesson saved. All lessons complete!', 'success');
+}
+function saveLesson(silent) {
+  captureLessonFields();
+  const { moduleIdx, lessonIdx } = lessonEditor;
+  if (moduleIdx === null) return;
+  const l = wizard.data.modules[moduleIdx].lessons[lessonIdx];
+  if (!l.title) {
+    if (!silent) showFlash('wizardFlash', '❌ Lesson title is required', 'danger');
+    return;
+  }
+  if (!silent) showFlash('wizardFlash', '✅ Lesson saved locally. Click "Save Draft" on Step 3 to persist.', 'success');
+  // Note: this saves in-memory. The wizard's "Save Draft" persists everything to the backend.
 }
 
 /* STEP 4 — QUESTIONS */
@@ -1174,12 +1502,7 @@ function renderQuestions() {
   `).join('');
 }
 function addQuestion() {
-  wizard.data.questions.push({
-    question_text: '',
-    options: ['', '', '', ''],
-    correct_index: 0,
-    marks: 2,
-  });
+  wizard.data.questions.push({ question_text: '', options: ['', '', '', ''], correct_index: 0, marks: 2 });
   renderQuestions();
 }
 function removeQuestion(qi) {
@@ -1194,14 +1517,16 @@ function renderPreview() {
   captureExamFields();
 
   const totalLessons = wizard.data.modules.reduce((n, m) => n + (m.lessons || []).length, 0);
+  const lessonsWithContent = wizard.data.modules.reduce((n, m) =>
+    n + (m.lessons || []).filter(l => l.notes && l.notes.trim()).length, 0);
 
-  // Completeness check
   const checks = [
     { ok: !!wizard.data.title, label: 'Course title' },
     { ok: !!wizard.data.category, label: 'Category set' },
     { ok: !!wizard.data.description, label: 'Description' },
     { ok: wizard.data.modules.length > 0, label: 'At least one module' },
     { ok: totalLessons > 0, label: 'At least one lesson' },
+    { ok: lessonsWithContent > 0, label: 'At least one lesson has content' },
     { ok: wizard.data.questions.length > 0, label: 'At least one exam question' },
   ];
   const okCount = checks.filter(c => c.ok).length;
@@ -1218,7 +1543,10 @@ function renderPreview() {
   const modulesHTML = wizard.data.modules.length === 0 ? '<p style="color:var(--text-secondary)">No modules yet.</p>' : wizard.data.modules.map((m, mi) => `
     <div style="background:var(--white);border-radius:12px;box-shadow:var(--shadow);padding:1rem;margin-bottom:0.75rem">
       <strong style="color:var(--navy);display:block;margin-bottom:0.5rem">Module ${mi + 1}: ${esc(m.title || '(untitled)')}</strong>
-      ${(m.lessons || []).map((l, li) => `<div style="font-size:0.85rem;color:var(--text-secondary);padding:0.25rem 0;padding-left:1rem">├── ${esc(l.title || '(untitled)')}</div>`).join('') || '<p style="font-size:0.82rem;color:var(--text-secondary)">No lessons.</p>'}
+      ${(m.lessons || []).map((l, li) => {
+        const c = lessonCompleteness(l);
+        return `<div style="font-size:0.85rem;color:var(--text-secondary);padding:0.25rem 0;padding-left:1rem;display:flex;justify-content:space-between;gap:0.5rem;align-items:center"><span>${mi + 1}.${li + 1} ${esc(l.title || '(untitled)')}</span><span style="font-size:0.7rem;color:${c.ready ? 'var(--success)' : '#94a3b8'}">${c.pct}%</span></div>`;
+      }).join('') || '<p style="font-size:0.82rem;color:var(--text-secondary)">No lessons.</p>'}
     </div>
   `).join('');
 
@@ -1245,13 +1573,13 @@ function renderPreview() {
 /* SAVE DRAFT */
 async function saveWizardDraft() {
   if (wizard.step === 1) captureBasicFields();
+  if (wizard.step === 3 && lessonEditor.moduleIdx !== null) captureLessonFields();
   if (wizard.step === 4) captureExamFields();
 
   if (!wizard.data.title) {
     showFlash('wizardFlash', '❌ Course title is required to save', 'danger');
     goToStep(1); return;
   }
-
   const payload = {
     title: wizard.data.title,
     code: wizard.data.code,
@@ -1268,7 +1596,6 @@ async function saveWizardDraft() {
     cat_unlock_hours: wizard.data.cat_unlock_hours,
     exam_unlock_hours: wizard.data.exam_unlock_hours,
   };
-
   try {
     if (wizard.id) {
       await api('/contributor/submissions/' + wizard.id, { method: 'PUT', body: payload });
@@ -1283,45 +1610,38 @@ async function saveWizardDraft() {
   }
 }
 
-/* SUBMIT FOR REVIEW */
+/* SUBMIT */
 async function submitWizard() {
   if (wizard.step === 1) captureBasicFields();
+  if (wizard.step === 3 && lessonEditor.moduleIdx !== null) captureLessonFields();
   if (wizard.step === 4) captureExamFields();
 
-  // Completeness gate
   const totalLessons = wizard.data.modules.reduce((n, m) => n + (m.lessons || []).length, 0);
+  const lessonsWithContent = wizard.data.modules.reduce((n, m) =>
+    n + (m.lessons || []).filter(l => l.notes && l.notes.trim()).length, 0);
+
   const missing = [];
   if (!wizard.data.title) missing.push('Course title');
   if (!wizard.data.category) missing.push('Category');
   if (!wizard.data.description) missing.push('Description');
   if (wizard.data.modules.length === 0) missing.push('At least one module');
   if (totalLessons === 0) missing.push('At least one lesson');
+  if (lessonsWithContent === 0) missing.push('Content for at least one lesson');
   if (wizard.data.questions.length === 0) missing.push('At least one exam question');
 
   if (missing.length) {
-    showFlash('wizardFlash', '⚠️ Complete these before submitting: ' + missing.join(', '), 'warning');
-    return;
+    showFlash('wizardFlash', '⚠️ Complete: ' + missing.join(', '), 'warning'); return;
   }
-
-  if (!confirm('Submit this course for admin review?\n\nYou won\'t be able to edit it while it\'s under review.')) return;
+  if (!confirm('Submit this course for admin review? You won\'t be able to edit it while under review.')) return;
 
   try {
-    // Save first
     const payload = {
-      title: wizard.data.title,
-      code: wizard.data.code,
-      category: wizard.data.category,
-      level: wizard.data.level,
-      description: wizard.data.description,
-      duration: wizard.data.duration,
-      price: wizard.data.price,
-      cover_image_url: wizard.data.cover_image_url,
-      modules: wizard.data.modules,
-      questions: wizard.data.questions,
-      cat_pass_mark: wizard.data.cat_pass_mark,
-      exam_pass_mark: wizard.data.exam_pass_mark,
-      cat_unlock_hours: wizard.data.cat_unlock_hours,
-      exam_unlock_hours: wizard.data.exam_unlock_hours,
+      title: wizard.data.title, code: wizard.data.code, category: wizard.data.category,
+      level: wizard.data.level, description: wizard.data.description, duration: wizard.data.duration,
+      price: wizard.data.price, cover_image_url: wizard.data.cover_image_url,
+      modules: wizard.data.modules, questions: wizard.data.questions,
+      cat_pass_mark: wizard.data.cat_pass_mark, exam_pass_mark: wizard.data.exam_pass_mark,
+      cat_unlock_hours: wizard.data.cat_unlock_hours, exam_unlock_hours: wizard.data.exam_unlock_hours,
     };
     if (wizard.id) {
       await api('/contributor/submissions/' + wizard.id, { method: 'PUT', body: payload });
@@ -1329,7 +1649,6 @@ async function submitWizard() {
       const { submission } = await api('/contributor/submissions', { method: 'POST', body: payload });
       wizard.id = submission.id;
     }
-    // Then submit
     await api('/contributor/submissions/' + wizard.id + '/submit', { method: 'POST' });
     showFlash('wizardFlash', '✅ Submitted for review!', 'success');
     setTimeout(() => {
@@ -1342,18 +1661,24 @@ async function submitWizard() {
   }
 }
 
-/* VIEW SUBMISSION (existing) */
+/* VIEW SUBMISSION */
 async function viewSubmission(id) {
   try {
     const { submission: s } = await api('/contributor/submissions/' + id);
     const canEdit = s.status === 'draft' || s.status === 'changes_requested';
     const modules = Array.isArray(s.modules) ? s.modules : [];
-    const modulesHtml = modules.map((m, mi) => `
-      <div style="background:var(--bg);padding:0.9rem;border-radius:10px;margin-bottom:0.65rem;border-left:4px solid var(--blue)">
-        <strong style="color:var(--navy);font-size:0.9rem">Module ${mi + 1}: ${esc(m.title || '(untitled)')}</strong>
-        ${(m.lessons || []).map((l, li) => `<div style="font-size:0.82rem;color:var(--text-secondary);margin-top:3px;padding-left:1rem">${mi + 1}.${li + 1} ${esc(l.title || '(untitled)')}</div>`).join('')}
-      </div>
-    `).join('');
+    const modulesHtml = modules.map((m, mi) => {
+      const lessons = Array.isArray(m.lessons) ? m.lessons : [];
+      return `
+        <div style="background:var(--bg);padding:0.9rem;border-radius:10px;margin-bottom:0.65rem;border-left:4px solid var(--blue)">
+          <strong style="color:var(--navy);font-size:0.9rem">Module ${mi + 1}: ${esc(m.title || '(untitled)')}</strong>
+          ${lessons.map((l, li) => {
+            const c = lessonCompleteness(normalizeLesson(l));
+            return `<div style="font-size:0.82rem;color:var(--text-secondary);margin-top:3px;padding-left:1rem;display:flex;justify-content:space-between"><span>${mi + 1}.${li + 1} ${esc(l.title || '(untitled)')}</span><span style="color:${c.ready ? 'var(--success)' : '#94a3b8'}">${c.pct}%</span></div>`;
+          }).join('')}
+        </div>
+      `;
+    }).join('');
 
     document.getElementById('viewContent').innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem">
@@ -1374,22 +1699,16 @@ async function viewSubmission(id) {
       ${canEdit ? `<div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:1.5rem"><button class="btn btn-primary" onclick="closeView(); editSubmission('${s.id}')"><i class="fas fa-edit"></i> Edit in Wizard</button></div>` : ''}
     `;
     document.getElementById('viewModal').classList.add('active');
-  } catch (err) {
-    alert('❌ ' + (err.data?.error || err.message));
-  }
+  } catch (err) { alert('❌ ' + (err.data?.error || err.message)); }
 }
 function closeView() { document.getElementById('viewModal').classList.remove('active'); }
-
 async function editSubmission(id) {
   try {
     const { submission } = await api('/contributor/submissions/' + id);
     startWizard(submission);
-  } catch (err) {
-    alert('❌ ' + (err.data?.error || err.message));
-  }
+  } catch (err) { alert('❌ ' + (err.data?.error || err.message)); }
 }
 
-// ─── BOOT ───
 boot();
 </script>
 </body>
