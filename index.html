@@ -940,7 +940,7 @@ async function loadManuals() {
         <h3><i class="fas fa-file-alt"></i> ${esc(m.title)}</h3>
         ${m.course_code ? `<div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.65rem">Code: <strong>${esc(m.course_code)}</strong></div>` : ''}
         ${m.instructions ? `<div style="background:var(--bg);padding:0.85rem;border-radius:10px;margin-bottom:1rem;font-size:0.88rem;white-space:pre-wrap">${esc(m.instructions)}</div>` : ''}
-        ${m.file_path ? `<a href="${esc(m.file_path)}" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download</a>` : ''}
+        ${m.file_path ? `<a href="${m.file_path.startsWith('http') ? esc(m.file_path) : 'https://nexora-api-sskg.onrender.com' + esc(m.file_path)}" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download</a>` : ''}
       </div>
     `).join('');
   } catch (err) {
